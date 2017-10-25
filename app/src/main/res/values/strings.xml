@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Bottom Navigation</string>
-    <string name="item_1">Item 1</string>
-    <string name="item_2">Item 2</string>
-    <string name="item_3">Item 3</string>
+    <string name="item_1">List</string>
+    <string name="item_2">Summary</string>
+    <string name="item_3">Test</string>
+    <string name="item_4">Setting</string>
 </resources>

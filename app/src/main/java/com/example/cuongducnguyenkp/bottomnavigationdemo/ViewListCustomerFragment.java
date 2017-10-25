@@ -1,20 +1,17 @@
 package com.example.cuongducnguyenkp.bottomnavigationdemo;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-
 import android.widget.ListView;
 
 import java.text.ParseException;
@@ -75,16 +72,16 @@ public class ViewListCustomerFragment extends Fragment {
         START_DATE = new ArrayList<String>();
 
         sqLiteHelper = new SQLiteHelper(this.getContext());
-        LISTVIEW.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(context.getApplicationContext(), ModifyCustomerFragment.class);
-
-                intent.putExtra("ListViewClickedItemValue", ListViewClickItemArray.get(position).toString());
-//                Toast.makeText(this., NAME_Array_temp.get(position), Toast.LENGTH_LONG).show();
-                selectedFragment = ModifyCustomerFragment.newInstance();
-            }
-        });
+//        LISTVIEW.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent(context.getApplicationContext(), ModifyCustomerFragment.class);
+//
+//                intent.putExtra("ListViewClickedItemValue", ListViewClickItemArray.get(position).toString());
+////                Toast.makeText(this., NAME_Array_temp.get(position), Toast.LENGTH_LONG).show();
+//                selectedFragment = ModifyCustomerFragment.newInstance();
+//            }
+//        });
 
 
 
