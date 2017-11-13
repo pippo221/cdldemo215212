@@ -7,7 +7,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "com.example.cuongducnguyenkp.bottomnavigationdemo"
+        applicationId "com.example.cuongducnguyenkp.cdldemo2"
         minSdkVersion 24
         targetSdkVersion 25
         versionCode 1

@@ -1,11 +1,11 @@
-package com.example.cuongducnguyenkp.bottomnavigationdemo;
+package com.example.cuongducnguyenkp.cdldemo2;
 
 import android.app.DatePickerDialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,8 +27,9 @@ public class ModifyCustomerFragment extends Fragment {
 
     SQLiteDatabase sqLiteDatabaseObj;
     EditText editTextName, editTextPhoneNumber, editTextAddress, editTextServiceType, editTextMonthlyCharge, editTextBox, editTextCost, editTextStartDate, editTextMAC, editTextContractDays, editTextExpiredDate, editTextMessageHolder;
-    String strNameHolder, strNumberHolder, SQLiteDataBaseQueryHolder, SQLiteDataBaseQueryHolder2, strAddressHolder, strServiceTypeHolder, strServiceHolder, strMonthlyChargeHolder, strBoxHolder, strCostholder, strStartDateHolder, strMACHolder, strExpiredDateHolder, strContractDaysHolder, strMessageHolder;
+    String strNameHolder, strNumberHolder, SQLiteDataBaseQueryHolder, SQLiteDataBaseQueryHolder2, strAddressHolder, strServiceTypeHolder, strServiceHolder, strMonthlyChargeHolder, strBoxHolder, strCostholder, strStartDateHolder, strMACHolder, strExpiredDateHolder, strContractDaysHolder, strMessageHolder, strEndDateHolder, strPaymentStatusHolder = "YES";
     FloatingActionButton EnterData, ButtonDisplayData, buttonTest;
+    int contractDaysTemp;
     RadioGroup radioGroupService;
     Boolean EditTextEmptyHold;
     List<String> DurationListStart = new ArrayList<>();
@@ -54,6 +55,7 @@ public class ModifyCustomerFragment extends Fragment {
         ButtonDisplayData = (FloatingActionButton) view.findViewById(R.id.button2);
 
         editTextName = (EditText) view.findViewById(R.id.editText1_EditName);
+        editTextName.setText("abc");
         editTextPhoneNumber = (EditText) view.findViewById(R.id.editText2_NewPhone);
         editTextAddress = (EditText) view.findViewById(R.id.editText3_NewAddress);
         editTextServiceType = (EditText) view.findViewById(R.id.editText4_NewServiceType);
@@ -127,26 +129,44 @@ public class ModifyCustomerFragment extends Fragment {
                         "Button Insert Click...", Toast.LENGTH_SHORT).show();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 Calendar c = new GregorianCalendar();
-                String temp = "";
+                Calendar c1 = new GregorianCalendar();
+                String temp = "", temp2 = "";
                 Calendar today = Calendar.getInstance();
                 today.set(Calendar.HOUR_OF_DAY, 0);
                 Date startDate = new Date();
+                Date endDate = new Date();
+                ////
                 try {
-                    startDate = formatter.parse(strStartDateHolder);
-                    temp = formatter.format(startDate);
+                    startDate = formatter.parse(strStartDateHolder);//chuyen thanh dinh dang Date
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                c1.setTime(startDate);//Tao ngay hop dong cuoi cung
+                c1.add(Calendar.DATE, contractDaysTemp);
+                endDate = c1.getTime();
+                temp2 = formatter.format(endDate);
+                strEndDateHolder = temp2;
+                Toast.makeText(getActivity(),
+                        String.valueOf(contractDaysTemp), Toast.LENGTH_SHORT).show();
+                ///
+
+                try {
+                    endDate = formatter.parse(strEndDateHolder);
+                    startDate = formatter.parse(strStartDateHolder);//chuyen thanh dinh dang Date
+                    temp = formatter.format(startDate);//chuyen sang kieu String
                     DurationListStart.add(temp);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
                 c.setTime(startDate);
                 int i = 0;
-                while (c.before(today)) {
-                    c.add(Calendar.DATE, 10);
+                while (c.before(endDate)) {
+                    c.add(Calendar.DATE, 14);//bien temp cho StartDate cua hop dong tang them 14 ngay roi add vao list
                     startDate = c.getTime();
                     temp = formatter.format(startDate);
                     DurationListEnd.add(temp);
-//                    Toast.makeText(getApplicationContext(),DurationListStart.get(i), Toast.LENGTH_SHORT).show();
-//                    Toast.makeText(getApplicationContext(),DurationListEnd.get(i), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), DurationListStart.get(i), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), DurationListEnd.get(i), Toast.LENGTH_SHORT).show();
                     c.add(Calendar.DATE, 1);
                     startDate = c.getTime();
                     temp = formatter.format(startDate);
@@ -235,6 +255,8 @@ public class ModifyCustomerFragment extends Fragment {
                     ",ExpiredDate" +
                     ",Contract_Days" +
                     ",message" +
+                    ",end_date" +
+                    ",payment_status" +
                     ") VALUES('" + strNameHolder + "', '" + strNumberHolder + "'" +
                     ",'" + strAddressHolder + "'" +
                     ",'" + strServiceTypeHolder + "'" +
@@ -247,6 +269,8 @@ public class ModifyCustomerFragment extends Fragment {
                     ",'" + strExpiredDateHolder + "'" +
                     ",'" + strContractDaysHolder + "'" +
                     ",'" + strMessageHolder + "'" +
+                    ",'" + strEndDateHolder + "'" +
+                    ",'" + strPaymentStatusHolder + "'" +
                     ");"
 //                    +"INSERT INTO " + SQLiteHelper.TABLE2_NAME+"(" +
 //                    "name"+
@@ -256,22 +280,26 @@ public class ModifyCustomerFragment extends Fragment {
 //                    ""
             ;
             sqLiteDatabaseObj.execSQL(SQLiteDataBaseQueryHolder);
-            int m = DurationListEnd.size();
-            int i2 = 0;
-            do {
-                SQLiteDataBaseQueryHolder2 = "INSERT INTO " + SQLiteHelper.TABLE2_NAME + "(" +
-                        "name, duration_start, duration_end" +
-                        ")VALUES('" +
-                        strNameHolder + "'" +
-                        ",'" + DurationListStart.get(i2) + "'" +
-                        ",'" + DurationListEnd.get(i2) + "" +
-                        "')"
+//            int m = DurationListEnd.size();
+//            int i2 = 0;
+//            do {
+////                Toast.makeText(getActivity(), DurationListStart.get(i2), Toast.LENGTH_SHORT).show();
+////                Toast.makeText(getActivity(), DurationListEnd.get(i2), Toast.LENGTH_SHORT).show();
+//                SQLiteDataBaseQueryHolder2 = "INSERT INTO " + SQLiteHelper.TABLE2_NAME + "(" +
+//                        "name, duration_start, duration_end, message, charge" +
+//                        ")VALUES('" +
+//                        strNameHolder + "'" +
+//                        ",'" + DurationListStart.get(i2) + "'" +
+//                        ",'" + DurationListEnd.get(i2) + "'" +
+//                        ",'Unpaid" +
+//                        ",'" + strMonthlyChargeHolder + "'" +
+//                        "')"
+//
+//                ;
+//                i2++;
+//                sqLiteDatabaseObj.execSQL(SQLiteDataBaseQueryHolder2);
+//            } while (i2 < m);
 
-                ;
-                i2++;
-            } while (i2 < m);
-
-            sqLiteDatabaseObj.execSQL(SQLiteDataBaseQueryHolder2);
 
             sqLiteDatabaseObj.close();
 
@@ -316,6 +344,7 @@ public class ModifyCustomerFragment extends Fragment {
         strExpiredDateHolder = editTextExpiredDate.getText().toString();
         strContractDaysHolder = editTextContractDays.getText().toString();
         strMessageHolder = editTextMessageHolder.getText().toString();
+        contractDaysTemp = Integer.parseInt(strContractDaysHolder);
         radioGroupService = (RadioGroup) getActivity().findViewById(R.id.radioGroupNewService5);
         int intChecked = radioGroupService.getCheckedRadioButtonId();
         switch (intChecked) {

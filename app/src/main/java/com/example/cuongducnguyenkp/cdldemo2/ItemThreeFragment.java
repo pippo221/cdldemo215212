@@ -1,4 +1,4 @@
-package com.example.cuongducnguyenkp.bottomnavigationdemo;
+package com.example.cuongducnguyenkp.cdldemo2;
 
 import android.os.Bundle;
 import android.app.Fragment;

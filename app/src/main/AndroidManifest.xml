@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cuongducnguyenkp.bottomnavigationdemo">
+    package="com.example.cuongducnguyenkp.cdldemo2">
 
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,17 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.cuongducnguyenkp.cdldemo2.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ModifyCustomerFragment"
+        <activity android:name="com.example.cuongducnguyenkp.cdldemo2.ModifyCustomerFragment"
             android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity android:name=".ViewListCustomerFragment" />
-        <activity android:name=".ItemThreeFragment"></activity>
+        <activity android:name="com.example.cuongducnguyenkp.cdldemo2.ViewListCustomerFragment" />
+        <activity android:name="com.example.cuongducnguyenkp.cdldemo2.ItemThreeFragment"></activity>
     </application>
 
 </manifest>

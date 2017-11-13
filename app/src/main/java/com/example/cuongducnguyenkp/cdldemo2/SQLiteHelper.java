@@ -1,4 +1,4 @@
-package com.example.cuongducnguyenkp.bottomnavigationdemo;
+package com.example.cuongducnguyenkp.cdldemo2;
 
 /**
  * Created by cuongducnguyen.kp on 10/11/2017.
@@ -29,12 +29,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String Table_Column_11_ExpiredDate="ExpiredDate";
     public static final String Table_Column_12_ContractDays="Contract_Days";
     public static final String Table_Column_13_Message="message";
+    public static final String Table_Column_14_EndDate="end_date";
+    public static final String Table_Column_15_PaymentStatus="payment_status";
 
     public static final String Table2_Column_ID="id";
+    public static final String Table2_Column_Customer_ID="customer_id";
     public static final String Table2_Column_Name="name";
     public static final String Table2_Column_DurationStart="duration_start";
     public static final String Table2_Column_DurationEnd="duration_end";
     public static final String Table2_Column_Message="message";
+    public static final String Table2_Column_Charge="charge";
 
     public SQLiteHelper(Context context) {
 
