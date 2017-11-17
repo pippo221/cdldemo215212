@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cuongducnguyenkp.cdldemo2.ItemFourFragment">
+    tools:context="com.example.cuongducnguyenkp.cdldemo2.CustomerDetailFragment">
 
     <RelativeLayout
         android:layout_width="0dp"
@@ -124,14 +124,15 @@
 
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#050505" />
+
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView4"
+                    android:layout_toRightOf="@+id/imageAVATAR"
                     android:paddingLeft="5dp"
                     android:text="Service Type = "
-                    android:layout_toRightOf="@+id/imageAVATAR"
-                    android:layout_below="@+id/textView4"
 
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#050505" />
@@ -146,14 +147,15 @@
                     android:text="Service Type"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#050505" />
+
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView6"
+                    android:layout_toRightOf="@+id/imageAVATAR"
                     android:paddingLeft="5dp"
                     android:text="MAC = "
-                    android:layout_toRightOf="@+id/imageAVATAR"
 
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#050505" />
@@ -201,8 +203,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
-
                 <TextView
                     android:id="@+id/textView7"
                     android:layout_width="wrap_content"
@@ -236,9 +236,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/textView9"
+                    android:layout_below="@+id/textViewEditContractDate"
                     android:layout_toRightOf="@+id/textView9"
                     android:text="On going/Delay/Cancel"
-                    android:layout_below="@+id/textViewEditContractDate"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#050505" />
 
