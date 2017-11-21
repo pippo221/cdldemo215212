@@ -9,21 +9,21 @@
         android:id="@+id/texViewServiceTypeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:text="Bill = "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp" />
 
     <TextView
         android:id="@+id/textViewServiceTypeCollect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/texViewServiceTypeName"
-        android:layout_alignBottom="@+id/texViewServiceTypeName"
-        android:layout_toRightOf="@+id/texViewServiceTypeName"
         android:text="UserID"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#050505"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="122dp" />
 </RelativeLayout>

@@ -2,7 +2,7 @@
     <string name="app_name">CDL-Demo2</string>
     <string name="item_1">List</string>
     <string name="item_2">Summary</string>
-    <string name="item_3">Test</string>
+    <string name="item_3">New Customer</string>
     <string name="item_4">Setting</string>
     <string name="spinner_prompt">Select category</string>
     <string-array name="spinner_search_selection">

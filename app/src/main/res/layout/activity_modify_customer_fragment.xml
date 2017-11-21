@@ -50,6 +50,7 @@
                 tools:layout_constraintLeft_creator="1" />
 
             <EditText
+                android:inputType="phone"
                 android:id="@+id/editText2_NewPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -58,7 +59,7 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint=" Phone Number"
-                android:inputType="textPersonName"
+
                 android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="@+id/editText1_EditName"
                 app:layout_constraintRight_toRightOf="@+id/editText1_EditName"
@@ -242,16 +243,34 @@
                 tools:layout_constraintRight_creator="1"
                 tools:layout_constraintTop_creator="1" />
 
+            <!--<EditText-->
+                <!--android:id="@+id/editText11_NewExpiredDate"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_below="@+id/editText10_NewMACAddress"-->
+                <!--android:ems="10"-->
+                <!--android:focusable="false"-->
+                <!--android:gravity="center"-->
+                <!--android:hint=" Expired Date"-->
+                <!--android:inputType="textPersonName"-->
+                <!--android:textSize="15dp"-->
+                <!--app:layout_constraintLeft_toLeftOf="@+id/editText10_NewMACAddress"-->
+                <!--app:layout_constraintRight_toRightOf="@+id/editText10_NewMACAddress"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/editText10_NewMACAddress"-->
+                <!--tools:layout_constraintLeft_creator="1"-->
+                <!--tools:layout_constraintRight_creator="1"-->
+                <!--tools:layout_constraintTop_creator="1" />-->
+
             <EditText
-                android:id="@+id/editText11_NewExpiredDate"
+                android:id="@+id/editText12_NewContractDay"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/editText10_NewMACAddress"
                 android:ems="10"
-                android:focusable="false"
                 android:gravity="center"
-                android:hint=" Expired Date"
+                android:hint=" Contract Day"
                 android:inputType="textPersonName"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="@+id/editText10_NewMACAddress"
@@ -261,41 +280,23 @@
                 tools:layout_constraintRight_creator="1"
                 tools:layout_constraintTop_creator="1" />
 
-            <EditText
-                android:id="@+id/editText12_NewContractDay"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/editText11_NewExpiredDate"
-                android:ems="10"
-                android:gravity="center"
-                android:hint=" Contract Day"
-                android:inputType="textPersonName"
-                android:textSize="15dp"
-                app:layout_constraintLeft_toLeftOf="@+id/editText11_NewExpiredDate"
-                app:layout_constraintRight_toRightOf="@+id/editText11_NewExpiredDate"
-                app:layout_constraintTop_toBottomOf="@+id/editText11_NewExpiredDate"
-                tools:layout_constraintLeft_creator="1"
-                tools:layout_constraintRight_creator="1"
-                tools:layout_constraintTop_creator="1" />
-
-            <EditText
-                android:id="@+id/editText13_NewtMessage"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/editText12_NewContractDay"
-                android:ems="10"
-                android:gravity="center"
-                android:hint=" Message"
-                android:inputType="textPersonName"
-                android:textSize="15dp"
-                app:layout_constraintLeft_toLeftOf="@+id/editText12_NewContractDay"
-                app:layout_constraintRight_toRightOf="@+id/editText12_NewContractDay"
-                app:layout_constraintTop_toBottomOf="@+id/editText12_NewContractDay"
-                tools:layout_constraintLeft_creator="1"
-                tools:layout_constraintRight_creator="1"
-                tools:layout_constraintTop_creator="1" />
+            <!--<EditText-->
+                <!--android:id="@+id/editText13_NewtMessage"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_below="@+id/editText12_NewContractDay"-->
+                <!--android:ems="10"-->
+                <!--android:gravity="center"-->
+                <!--android:hint=" Message"-->
+                <!--android:inputType="textPersonName"-->
+                <!--android:textSize="15dp"-->
+                <!--app:layout_constraintLeft_toLeftOf="@+id/editText12_NewContractDay"-->
+                <!--app:layout_constraintRight_toRightOf="@+id/editText12_NewContractDay"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/editText12_NewContractDay"-->
+                <!--tools:layout_constraintLeft_creator="1"-->
+                <!--tools:layout_constraintRight_creator="1"-->
+                <!--tools:layout_constraintTop_creator="1" />-->
 
             <!--<EditText-->
             <!--android:layout_width="0dp"-->
